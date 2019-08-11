@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'webpack_loader',
+    'bootstrap4',
 ]
 
 MIDDLEWARE = [
@@ -55,12 +56,7 @@ ROOT_URLCONF = 'colmado_app.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            os.path.join(BASE_DIR, 'colmado_app', 'core', 'templates')
-        ],
-        STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'colmado_app', 'core', 'static'),
-        ),
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
