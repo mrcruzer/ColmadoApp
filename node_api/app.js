@@ -1,13 +1,13 @@
 const express = require('express')
 const mongoose = require("mongoose")
 const bodyParser = require('body-parser')
+const env = require('env2')('.env')
 
 const app = express()
 const port = 2020
 app.use(bodyParser.json())
 // Base de datos NoSQL
-const url = "mongodb+srv://maxsierra16:mxfresh.16@cluster0-nzbfd.mongodb.net/test?retryWrites=true&w=majority"
-mongoose.connect(url, { useNewUrlParser: true, useFindAndModify: false }) // 
+mongoose.connect(process.env.DB, { useNewUrlParser: true, useFindAndModify: false }) // 
 
 const ClienteSchema = new mongoose.Schema({
     nombre: String,
